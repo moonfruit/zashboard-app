@@ -1,19 +1,41 @@
-# README
+# Zashboard
+
+A lightweight desktop wrapper for [Zashboard](https://github.com/Zephyruso/zashboard), built with [Wails](https://wails.io/).
+
+[中文文档](README_zh.md)
 
 ## About
 
-This is the official Wails Vue template.
+Zashboard is a dashboard panel built on Clash API. This project packages it as a lightweight native desktop application, supporting Windows, macOS, and Linux platforms.
 
-You can configure the project by editing `wails.json`. More information about the project settings can be found
-here: https://wails.io/docs/reference/project-config
+## Features
 
-## Live Development
-
-To run in live development mode, run `wails dev` in the project directory. This will run a Vite development
-server that will provide very fast hot reload of your frontend changes. If you want to develop in a browser
-and have access to your Go methods, there is also a dev server that runs on http://localhost:34115. Connect
-to this in your browser, and you can call your Go code from devtools.
+- Native desktop experience
+- Cross-platform support (Windows / macOS / Linux)
+- Lightweight with low resource usage
+- Feature parity with the web version
 
 ## Building
 
-To build a redistributable, production mode package, use `wails build`.
+### Prerequisites
+
+- [Go](https://go.dev/) (stable)
+- [Node.js](https://nodejs.org/) (LTS)
+- [pnpm](https://pnpm.io/)
+- [Wails CLI](https://wails.io/docs/gettingstarted/installation)
+
+### Development
+
+```bash
+wails dev
+```
+
+### Production Build
+
+```bash
+wails build
+```
+
+## License
+
+MIT License
