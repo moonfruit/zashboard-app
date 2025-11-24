@@ -1,6 +1,7 @@
 {
   "$schema": "https://wails.io/schemas/config.v2.json",
   "name": "Zashboard",
+  "version": "1.0.0+web.2.2.0",
   "outputfilename": "Zashboard",
   "frontend:install": "pnpm install",
   "frontend:build": "pnpm run build:misans-only",
