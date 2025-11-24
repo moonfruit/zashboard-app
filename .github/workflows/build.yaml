@@ -20,4 +20,3 @@ jobs:
         with:
           build-name: Zashboard
           build-platform: ${{ matrix.build.platform }}
-          build-obfuscate: true
