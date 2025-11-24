@@ -1,0 +1,23 @@
+name: Build Apps
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        build:
+          - { platform: linux/amd64, os: ubuntu-latest }
+          - { platform: windows/amd64, os: windows-latest }
+          - { platform: darwin/universal, os: macos-latest }
+    runs-on: ${{ matrix.build.os }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          submodules: recursive
+      - uses: dAppServer/wails-build-action@v3
+        with:
+          build-name: Zashboard
+          build-platform: ${{ matrix.build.platform }}
+          build-obfuscate: true
