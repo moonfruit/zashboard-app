@@ -14,11 +14,31 @@ jobs:
             os: windows-latest
           - platform: darwin/arm64
             os: macos-latest
+
     runs-on: ${{ matrix.build.os }}
     steps:
-      - uses: actions/checkout@v6
+      - name: Checkout codes
+        uses: actions/checkout@v6
         with:
           submodules: recursive
+
+      - name: Setup Go
+        uses: actions/setup-go@v6
+        with:
+          go-version-file: "go.mod"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          package_json_file: frontend/package.json
+          run_install: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: lts/Krypton
+          cache: pnpm
+
       - uses: dAppServer/wails-build-action@main
         with:
           build-name: Zashboard
