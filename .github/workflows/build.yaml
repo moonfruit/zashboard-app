@@ -22,11 +22,6 @@ jobs:
         with:
           submodules: recursive
 
-      #- name: Setup Go
-      #  uses: actions/setup-go@v6
-      #  with:
-      #    go-version-file: "go.mod"
-
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
@@ -45,5 +40,5 @@ jobs:
           build-name: Zashboard
           build-platform: ${{ matrix.build.platform }}
           build-obfuscate: true
-          go-version: 1.25
+          go-version: stable
           node-version: lts/*
