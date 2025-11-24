@@ -28,12 +28,12 @@ jobs:
           package_json_file: frontend/package.json
           run_install: false
 
-      #- name: Setup Node.js
-      #  uses: actions/setup-node@v6
-      #  with:
-      #    node-version: lts/*
-      #    cache: pnpm
-      #    cache-dependency-path: frontend
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: lts/*
+          cache: pnpm
+          cache-dependency-path: frontend
 
       - uses: dAppServer/wails-build-action@main
         with:
